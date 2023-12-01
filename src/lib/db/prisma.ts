@@ -14,4 +14,15 @@ const prisma = globalForPrisma.prisma ?? prismaClientSingleton()
 
 export default prisma
 
+//  const prisma = prismaBase.$extends({
+//   query: {
+//     cart: {
+//       async update ({ args, query }) {
+//         args.data = { ...args.data, updatedAt: new Date() }
+//         return query(args)
+//       }
+//     }
+//   }
+// })
+
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
